@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía de Aprendizaje: Habilidades para el Nuevo Entorno Laboral</title>
+    <!-- Tailwind CSS para diseño moderno, responsivo y de alto contraste -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+        }
+
+        .fade-in {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Estilos para accesibilidad en enfoque (WCAG 2.1) */
+        :focus {
+            outline: 3px solid #047857; /* Emerald-700 para alto contraste */
+            outline-offset: 3px;
+        }
+
+        /* Barra de progreso fluida */
+        .progress-bar {
+            transition: width 0.4s ease-in-out;
+        }
+
+        /* Contenedor de video con relación de aspecto 16:9 */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 0.75rem;
+        }
+        .video-container video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+        }
+
+        /* Contenedor adaptativo de imágenes con fallback */
+        .img-fallback {
+            background-color: #f1f5f9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 250px;
+            border-radius: 1rem;
+            border: 2px dashed #cbd5e1;
+        }
+    </style>
+</head>
+<body class="min-h-screen text-slate-800">
+
+    <!-- Accesibilidad: Enlace de salto rápido para lectores de pantalla -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:p-4 focus:bg-emerald-600 focus:text-white focus:z-50 rounded-md">
+        Saltar al contenido principal
+    </a>
+
+    <!-- CABECERA: Barra de Progreso y Marcador de Competencia Global -->
+    <header class="sticky top-0 z-50 bg-white shadow-md border-b border-emerald-100" role="banner">
+        <div class="max-w-4xl mx-auto px-4 py-3 flex flex-col sm:flex-row justify-between sm:items-center gap-2">
+            <div class="flex items-center gap-3">
+                <span class="text-xs font-bold bg-emerald-700 text-white px-2.5 py-1 rounded">SENA</span>
+                <span class="text-sm font-semibold text-emerald-800">Habilidades Laborales del Siglo XXI</span>
+            </div>
+            <div class="flex items-center justify-between sm:justify-end gap-6 w-full sm:w-auto">
+                <div class="flex items-center gap-2">
+                    <span class="text-xs text-slate-500 font-medium">Progreso general:</span>
+                    <div class="w-24 bg-slate-200 rounded-full h-2.5 overflow-hidden">
+                        <div id="mainProgress" class="progress-bar bg-emerald-600 h-2.5 w-[0%]" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+                <span id="scoreDisplay" class="text-sm font-bold text-slate-700 bg-slate-100 px-3 py-1 rounded-full" aria-live="polite">Puntos: 0</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Región ARIA Live para Anuncios Dinámicos No Invasivos -->
+    <div id="ariaAnnouncer" class="sr-only" role="status" aria-live="polite"></div>
+
+    <main id="main-content" class="max-w-4xl mx-auto px-4 py-8" role="main">
+        
+        <!-- ========================================== -->
+        <!-- MICRO 1: EL RETO                           -->
+        <!-- ========================================== -->
+        <section id="micro1" class="fade-in">
+            <div class="bg-white rounded-2xl shadow-xl p-8 border border-slate-100">
+                <div class="flex items-center gap-3 mb-6">
+                    <span class="bg-emerald-100 text-emerald-800 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Micro 1: El Reto</span>
+                    <span class="text-slate-400 text-sm italic">Duración: 5 minutos</span>
+                </div>
+                
+                <h1 class="text-3xl font-bold text-slate-900 mb-4">¿Estás preparado para lo impredecible en tu trabajo?</h1>
+                
+                <!-- Video de Introducción -->
+                <div class="mb-8">
+                    <div class="video-container shadow-lg border border-slate-200">
+                        <video controls poster="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=1000">
+                            <source src="VIDEOS\YTDOWN~1.MP4" type="video/mp4">
+                            Tu navegador no soporta la reproducción de videos locales.
+                        </video>
+                    </div>
+                    <p class="text-xs text-slate-400 mt-2 text-center">Video introductorio: Contextualización del cambio organizacional.</p>
+                </div>
+
+                <div class="bg-amber-50 border-l-4 border-amber-500 p-4 mb-6 rounded-r-lg" role="alert">
+                    <div class="flex">
+                        <div class="flex-shrink-0">
+                            <svg class="h-5 w-5 text-amber-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                        <div class="ml-3">
+                            <p class="text-sm text-amber-900 font-semibold">
+                                Reto del Entorno VUCA / BANI:
+                            </p>
+                            <p class="text-xs text-amber-800 mt-0.5">
+                                La velocidad técnica está redefiniendo los perfiles. Según el SENA y el Foro Económico Mundial, las habilidades blandas orientadas al cambio son hoy competencias de supervivencia laboral técnica.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-y-4 mb-8">
+                    <p class="text-lg leading-relaxed text-slate-700">
+                        Imagina que tu área técnica de trabajo sufre un cambio disruptivo imprevisto: se implementa una nueva plataforma automatizada y tu equipo de trabajo entra en parálisis por la frustración de no dominarla de inmediato.
+                    </p>
+                    <p class="font-semibold text-emerald-700">¿Implementas un cambio puramente remediativo (apagar el fuego del día) o diseñas una transición evolutiva y duradera?</p>
+                </div>
+
+                <button onclick="navigateTo('micro2')" class="w-full md:w-auto px-8 py-3 bg-emerald-700 hover:bg-emerald-800 text-white font-bold rounded-lg shadow-md transition-all transform hover:-translate-y-0.5 focus:ring-4 focus:ring-emerald-200">
+                    Aceptar el Desafío →
+                </button>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- MICRO 2: EL CONTENIDO                      -->
+        <!-- ========================================== -->
+        <section id="micro2" class="hidden fade-in">
+            <div class="bg-white rounded-2xl shadow-xl p-8 border border-slate-100">
+                <div class="flex items-center gap-3 mb-6">
+                    <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Micro 2: Contenido</span>
+                    <span class="text-slate-400 text-sm italic">Duración: 10 minutos</span>
+                </div>
+
+                <h2 class="text-3xl font-bold text-slate-900 mb-4">La Teoría en Acción</h2>
+                <p class="text-slate-600 mb-8 leading-relaxed">Comprender las curvas de adaptación y los tipos de cambio humano nos permite formular estrategias con base científica y técnica.</p>
+
+                <!-- Imagen Técnica de Referencia -->
+                <div class="mb-10">
+                    <h3 class="text-lg font-bold text-slate-700 mb-4 flex items-center gap-2">
+                        <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                        </svg>
+                        Esquema de Transición y Tipos de Cambio
+                    </h3>
+                    <div class="img-fallback shadow-inner overflow-hidden">
+                        <img src="IMAGENES\Captura de pantalla 2026-05-07 075556.png" alt="Gráfico esquemático que detalla la relación entre los tipos de cambio (remediativo, generativo, evolutivo) y la reconfiguración emocional de los equipos de trabajo" class="max-w-full h-auto object-contain" onerror="this.parentElement.innerHTML='<div class=\'p-8 text-center text-slate-400\'><svg class=\'mx-auto w-12 h-12 mb-3 opacity-30\' fill=\'none\' stroke=\'currentColor\' viewBox=\'0 0 24 24\'><path stroke-linecap=\'round\' stroke-linejoin=\'round\' stroke-width=\'1.5\' d=\'M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z\'></path></svg><p class=\'font-medium text-slate-500 text-sm\'>Visualización: Tipos de Cambio en el Trabajo</p><p class=\'text-xs mt-1\'>Ubicación: IMAGENES/Captura de pantalla 2026-05-07 075556.png</p></div>'">
+                    </div>
+                </div>
+
+                <!-- Acordeón para Evitar la Sobrecarga de Información -->
+                <div class="space-y-4" role="tablist" aria-label="Tipos de Cambio">
+                    <!-- Acordeón 1 -->
+                    <div class="border border-slate-200 rounded-xl overflow-hidden shadow-sm">
+                        <button onclick="toggleAccordion('acc1')" class="w-full flex justify-between items-center p-4 bg-slate-50 hover:bg-slate-100 transition-colors" aria-expanded="false" aria-controls="acc1" id="btn-acc1">
+                            <span class="font-bold text-slate-700 text-left">1. Cambio Remediativo (Acciones de Corto Alcance)</span>
+                            <svg id="icon-acc1" class="w-5 h-5 text-slate-500 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div id="acc1" class="hidden p-5 bg-white border-t border-slate-100 text-sm leading-relaxed text-slate-600" role="region" aria-labelledby="btn-acc1">
+                            <p class="mb-2"><strong>Definición:</strong> Introducción de cambios específicos diseñados para solucionar una situación problemática inmediata ("apagar incendios"). Opera directamente sobre el comportamiento visible y el contexto circundante.</p>
+                            <p><strong>Ejemplo:</strong> En caso de un fallo en la base de datos de producción, aplicar un script temporal de parche técnico que recupere el servicio momentáneamente sin indagar en el error original.</p>
+                        </div>
+                    </div>
+
+                    <!-- Acordeón 2 -->
+                    <div class="border border-slate-200 rounded-xl overflow-hidden shadow-sm">
+                        <button onclick="toggleAccordion('acc2')" class="w-full flex justify-between items-center p-4 bg-slate-50 hover:bg-slate-100 transition-colors" aria-expanded="false" aria-controls="acc2" id="btn-acc2">
+                            <span class="font-bold text-slate-700 text-left">2. Cambio Generativo (Desarrollo de Capacidades)</span>
+                            <svg id="icon-acc2" class="w-5 h-5 text-slate-500 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div id="acc2" class="hidden p-5 bg-white border-t border-slate-100 text-sm leading-relaxed text-slate-600" role="region" aria-labelledby="btn-acc2">
+                            <p class="mb-2"><strong>Definición:</strong> Acciones que crean las condiciones adecuadas para el afrontamiento futuro a través del entrenamiento de nuevas capacidades cognitivas, técnicas, y de la modificación deliberada de creencias y valores organizacionales.</p>
+                            <p><strong>Ejemplo:</strong> Establecer una rutina periódica de entrenamiento técnico en automatización e integración continua, fomentando la creencia del autoaprendizaje y adaptabilidad en el equipo.</p>
+                        </div>
+                    </div>
+
+                    <!-- Acordeón 3 -->
+                    <div class="border border-slate-200 rounded-xl overflow-hidden shadow-sm">
+                        <button onclick="toggleAccordion('acc3')" class="w-full flex justify-between items-center p-4 bg-slate-50 hover:bg-slate-100 transition-colors" aria-expanded="false" aria-controls="acc3" id="btn-acc3">
+                            <span class="font-bold text-slate-700 text-left">3. Cambio Evolutivo (Nivel Identidad y Trascendencia)</span>
+                            <svg id="icon-acc3" class="w-5 h-5 text-slate-500 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div id="acc3" class="hidden p-5 bg-white border-t border-slate-100 text-sm leading-relaxed text-slate-600" role="region" aria-labelledby="btn-acc3">
+                            <p class="mb-2"><strong>Definición:</strong> Nivel profundo del desarrollo. Se enfoca en robustecer las condiciones futuras interviniendo directamente a nivel de la identidad (quiénes somos) y de la trascendencia (el valor social y operativo que aportamos a los demás).</p>
+                            <p><strong>Ejemplo:</strong> Reconfigurar la cultura del equipo técnico para que no se autodefina como "escribientes de código", sino como "solucionadores de problemas que impulsan el bienestar social y la sostenibilidad de su comunidad".</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-8 flex justify-between">
+                    <button onclick="navigateTo('micro1')" class="text-slate-600 hover:text-slate-800 font-semibold px-4 py-2 hover:bg-slate-100 rounded-lg">← Volver</button>
+                    <button onclick="navigateTo('micro3')" class="px-8 py-3 bg-blue-700 hover:bg-blue-800 text-white font-bold rounded-lg shadow-md transition-all">Ir a la Aplicación →</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- MICRO 3: LA APLICACIÓN (DISEÑO REESTRUCTURADO) -->
+        <!-- ========================================== -->
+        <section id="micro3" class="hidden fade-in">
+            <div class="bg-white rounded-2xl shadow-xl p-8 border border-slate-100">
+                <div class="flex items-center gap-3 mb-6">
+                    <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Micro 3: Aplicación</span>
+                    <span class="text-slate-400 text-sm italic">Duración: 10 minutos</span>
+                </div>
+
+                <h2 class="text-3xl font-bold text-slate-900 mb-4">Simulador de Estrategias y Evaluación Formativa</h2>
+                <p class="text-slate-600 mb-6 leading-relaxed">
+                    Aplica la teoría vista de manera segmentada para evitar la fatiga mental. A continuación, analiza la situación técnica audiovisual, interactúa con el simulador y completa el cuestionario de validación formativa.
+                </p>
+
+                <!-- Bloque Audiovisual de Análisis Técnico -->
+                <div class="mb-8">
+                    <div class="video-container shadow-md border border-slate-200">
+                        <video id="micro3Video" controls poster="https://images.unsplash.com/photo-1531538606174-0f90ff5dce83?auto=format&fit=crop&q=80&w=1000">
+                            <source src="VIDEOS\YTDOWN~1.MP4" type="video/mp4">
+                            Tu navegador no soporta la reproducción de videos locales.
+                        </video>
+                    </div>
+                    <p class="text-xs text-slate-400 mt-2 text-center">Video de análisis: Entorno y retos asociados a los tipos de cambio organizacionales.</p>
+                </div>
+
+                <!-- SEGMENTO 1: Teoría Técnica Focalizada (Evita sobrecarga) -->
+                <div class="bg-slate-50 border border-slate-200 rounded-xl p-6 mb-8">
+                    <h3 class="text-lg font-bold text-emerald-800 mb-2">Segmento de Aprendizaje: Resiliencia y Adaptabilidad</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed mb-4">
+                        Para enfrentar un reto laboral de manera integral debemos:
+                    </p>
+                    <ul class="list-disc pl-5 text-xs text-slate-600 space-y-2">
+                        <li><strong>Identificar:</strong> Distinguir si el problema requiere acción inmediata (remediativo) o de fondo (generativo/evolutivo).</li>
+                        <li><strong>Reconfigurar:</strong> Gestionar las emociones desde la mente y el cuerpo para evitar la resistencia obstinada al cambio.</li>
+                        <li><strong>Implementar:</strong> Utilizar marcos ágiles e interactivos que faciliten la mejora continua del equipo (antifragilidad).</li>
+                    </ul>
+                </div>
+
+                <!-- SEGMENTO 2: Cuestionario Automatizado de Evaluación Formativa -->
+                <div class="border-t border-slate-200 pt-8">
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Evaluación Formativa Automatizada</h3>
+                    <p class="text-sm text-slate-500 mb-6">Selecciona la opción correcta en cada ítem para verificar la asimilación conceptual técnica de los contenidos.</p>
+                    
+                    <form id="formEvaluacion" class="space-y-8" onsubmit="event.preventDefault();">
+                        <!-- Pregunta 1 -->
+                        <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-sm">
+                            <span class="inline-block bg-slate-200 text-slate-800 text-[10px] font-bold px-2.5 py-1 rounded-full mb-3">Pregunta 1</span>
+                            <p class="font-semibold text-slate-800 mb-4" id="lbl-p1">¿Qué tipo de cambio implica la creación de condiciones para afrontar retos nuevos mediante la adquisición de nuevas capacidades o creencias de autocuidado?</p>
+                            <div class="space-y-2" role="radiogroup" aria-labelledby="lbl-p1">
+                                <label class="flex items-center p-3 border rounded-lg cursor-pointer hover:bg-slate-50 transition-colors">
+                                    <input type="radio" name="p1" value="remediativo" class="w-4 h-4 text-emerald-600 mr-3" required>
+                                    <span class="text-sm text-slate-700">A. Cambio Remediativo</span>
+                                </label>
+                                <label class="flex items-center p-3 border rounded-lg cursor-pointer hover:bg-slate-50 transition-colors">
+                                    <input type="radio" name="p1" value="generativo" class="w-4 h-4 text-emerald-600 mr-3">
+                                    <span class="text-sm text-slate-700">B. Cambio Generativo</span>
+                                </label>
+                                <label class="flex items-center p-3 border rounded-lg cursor-pointer hover:bg-slate-50 transition-colors">
+                                    <input type="radio" name="p1" value="evolutivo" class="w-4 h-4 text-emerald-600 mr-3">
+                                    <span class="text-sm text-slate-700">C. Cambio Evolutivo</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Pregunta 2 -->
+                        <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-sm">
+                            <span class="inline-block bg-slate-200 text-slate-800 text-[10px] font-bold px-2.5 py-1 rounded-full mb-3">Pregunta 2</span>
+                            <p class="font-semibold text-slate-800 mb-4" id="lbl-p2">Cuando reparamos momentáneamente un incidente técnico sin transformar la cultura o entrenar al personal, ¿en qué nivel de acción estamos operando?</p>
+                            <div class="space-y-2" role="radiogroup" aria-labelledby="lbl-p2">
+                                <label class="flex items-center p-3 border rounded-lg cursor-pointer hover:bg-slate-50 transition-colors">
+                                    <input type="radio" name="p2" value="remediativo" class="w-4 h-4 text-emerald-600 mr-3" required>
+                                    <span class="text-sm text-slate-700">A. Cambio Remediativo</span>
+                                </label>
+                                <label class="flex items-center p-3 border rounded-lg cursor-pointer hover:bg-slate-50 transition-colors">
+                                    <input type="radio" name="p2" value="generativo" class="w-4 h-4 text-emerald-600 mr-3">
+                                    <span class="text-sm text-slate-700">B. Cambio Generativo</span>
+                                </label>
+                                <label class="flex items-center p-3 border rounded-lg cursor-pointer hover:bg-slate-50 transition-colors">
+                                    <input type="radio" name="p2" value="evolutivo" class="w-4 h-4 text-emerald-600 mr-3">
+                                    <span class="text-sm text-slate-700">C. Cambio Evolutivo</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Pregunta 3 -->
+                        <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-sm">
+                            <span class="inline-block bg-slate-200 text-slate-800 text-[10px] font-bold px-2.5 py-1 rounded-full mb-3">Pregunta 3</span>
+                            <p class="font-semibold text-slate-800 mb-4" id="lbl-p3">Según el diseño curricular, la capacidad de prosperar y robustecerse ante situaciones adversas o imprevistas en lugar de solo resistirlas se define como:</p>
+                            <div class="space-y-2" role="radiogroup" aria-labelledby="lbl-p3">
+                                <label class="flex items-center p-3 border rounded-lg cursor-pointer hover:bg-slate-50 transition-colors">
+                                    <input type="radio" name="p3" value="resiliencia" class="w-4 h-4 text-emerald-600 mr-3" required>
+                                    <span class="text-sm text-slate-700">A. Resiliencia pura y dura</span>
+                                </label>
+                                <label class="flex items-center p-3 border rounded-lg cursor-pointer hover:bg-slate-50 transition-colors">
+                                    <input type="radio" name="p3" value="antifragilidad" class="w-4 h-4 text-emerald-600 mr-3">
+                                    <span class="text-sm text-slate-700">B. Antifragilidad</span>
+                                </label>
+                                <label class="flex items-center p-3 border rounded-lg cursor-pointer hover:bg-slate-50 transition-colors">
+                                    <input type="radio" name="p3" value="remitencia" class="w-4 h-4 text-emerald-600 mr-3">
+                                    <span class="text-sm text-slate-700">C. Adaptación remediativa temporal</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="text-center">
+                            <!-- Botón de Envío Asíncrono que no altera el foco abruptamente -->
+                            <button type="button" onclick="procesarEvaluacion()" class="w-full sm:w-auto px-10 py-4 bg-emerald-700 hover:bg-emerald-800 text-white font-bold text-lg rounded-xl shadow-lg transition-transform transform hover:-translate-y-0.5">
+                                Procesar Respuestas
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- SEGMENTO 3: Retroalimentación Diferida (Aparece dinámicamente) -->
+                <div id="sectionRetroalimentacion" class="hidden mt-10 p-6 bg-slate-50 border border-slate-300 rounded-2xl fade-in" aria-live="polite">
+                    <h4 class="text-xl font-bold text-slate-900 mb-3 flex items-center gap-2">
+                        <svg class="w-6 h-6 text-emerald-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        Informe Diagnóstico y Retroalimentación Diferida
+                    </h4>
+                    <p class="text-sm text-slate-600 mb-4" id="txtResumenDiagnostico"></p>
+                    
+                    <div class="space-y-3 text-xs" id="listaRecomendaciones">
+                        <!-- Las recomendaciones dinámicas se insertan aquí -->
+                    </div>
+                </div>
+
+                <div class="mt-12 flex justify-between border-t border-slate-100 pt-6">
+                    <button onclick="navigateTo('micro2')" class="text-slate-600 hover:text-slate-800 font-semibold px-4 py-2 hover:bg-slate-100 rounded-lg">← Volver</button>
+                    <button onclick="navigateTo('micro4')" class="px-8 py-3 bg-purple-700 hover:bg-purple-800 text-white font-bold rounded-lg shadow-md transition-all">Ir al Cierre de Sesión →</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- MICRO 4: RETENCIÓN Y TRANSFERENCIA         -->
+        <!-- ========================================== -->
+        <section id="micro4" class="hidden fade-in">
+            <div class="bg-white rounded-2xl shadow-xl p-8 border border-slate-100 text-center">
+                <div class="flex justify-center mb-6">
+                    <span class="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Micro 4: Retención y Transferencia</span>
+                </div>
+
+                <h2 class="text-3xl font-black text-slate-900 mb-4">Cierre del Ciclo de Aprendizaje</h2>
+                <p class="text-slate-600 max-w-2xl mx-auto mb-8 leading-relaxed">
+                    Has completado la apropiación teórica y la validación práctica de las herramientas de cambio organizacional de la guía interactiva.
+                </p>
+
+                <div class="bg-emerald-50 border border-emerald-200 rounded-2xl p-6 text-left max-w-2xl mx-auto mb-10">
+                    <h3 class="font-bold text-emerald-800 mb-2">Pasos para la transferencia laboral inmediata:</h3>
+                    <ol class="list-decimal pl-5 text-sm text-slate-700 space-y-2">
+                        <li>Familiarízate con las reacciones de tu equipo técnico identificando en qué punto de la <strong>Curva de Cambio</strong> se sitúan.</li>
+                        <li>Asegura que tu plan de acción no sea una respuesta puramente remediativa; impulsa capacitaciones enfocadas en el desarrollo de <strong>nuevas capacidades (generativo)</strong>.</li>
+                        <li>Vincula la labor de tu equipo a una <strong>identidad trascendente (cambio evolutivo)</strong>.</li>
+                    </ol>
+                </div>
+
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <button onclick="navigateTo('micro3')" class="px-6 py-2 border border-slate-300 text-slate-600 font-semibold rounded-lg hover:bg-slate-50">
+                        ← Revisar Evaluaciones
+                    </button>
+                    <button onclick="completarSesionFinal()" class="px-8 py-3 bg-emerald-700 hover:bg-emerald-800 text-white font-bold rounded-lg shadow-lg">
+                        Finalizar Sesión Formativa
+                    </button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- MODAL DE GAMIFICACIÓN: INSIGNIA SENA -->
+    <div id="badgeModal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <div class="bg-white rounded-3xl p-10 max-w-sm w-full text-center shadow-2xl fade-in">
+            <div class="w-32 h-32 bg-yellow-400 rounded-full mx-auto mb-6 flex items-center justify-center shadow-lg border-4 border-white outline outline-4 outline-yellow-400 animate-bounce">
+                <svg class="w-20 h-20 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                </svg>
+            </div>
+            <h3 id="modalTitle" class="text-2xl font-black text-slate-900 mb-2">¡SESIÓN COMPLETADA!</h3>
+            <p class="text-slate-600 mb-6">Has demostrado dominar técnicamente los conceptos de tipos de cambio y adaptabilidad.</p>
+            <div class="py-2.5 px-4 bg-emerald-100 text-emerald-800 font-bold rounded-lg mb-6 text-sm">
+                Insignia: Gestor de Cambio y Adaptabilidad SENA
+            </div>
+            <button onclick="closeModal()" class="w-full py-3 bg-emerald-700 text-white font-bold rounded-xl hover:bg-emerald-800 transition-colors focus:ring-4 focus:ring-emerald-200">
+                Aceptar y Cerrar
+            </button>
+        </div>
+    </div>
+
+    <!-- SCRIPT DE LÓGICA PEDAGÓGICA Y CONTROL DE ACCESIBILIDAD -->
+    <script>
+        // --- ESTADO GENERAL DE LA SESIÓN ---
+        let state = {
+            currentMicro: 'micro1',
+            score: 0,
+            progress: 25,
+            respuestasCorrectas: {
+                p1: 'generativo',
+                p2: 'remediativo',
+                p3: 'antifragilidad'
+            }
+        };
+
+        const scoreDisplay = document.getElementById('scoreDisplay');
+        const mainProgress = document.getElementById('mainProgress');
+        const announcer = document.getElementById('ariaAnnouncer');
+
+        /**
+         * Navegación Single Page App (SPA) amigable con Gagné.
+         */
+        function navigateTo(targetId) {
+            // Ocultar sección actual
+            document.getElementById(state.currentMicro).classList.add('hidden');
+            // Mostrar sección de destino
+            document.getElementById(targetId).classList.remove('hidden');
+            
+            // Pausar reproducción de videos de apoyo si se cambia de Micro
+            const videoM3 = document.getElementById('micro3Video');
+            if (videoM3) videoM3.pause();
+
+            state.currentMicro = targetId;
+            updateProgress(targetId);
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            
+            // Anunciar de manera auditiva a lectores de pantalla el cambio de sección
+            const textSeccion = document.querySelector(`#${targetId} span`).innerText;
+            anunciarAccesible(`Navegaste a la sección: ${textSeccion}`);
+        }
+
+        /**
+         * Actualiza el indicador de avance general de la sesión.
+         */
+        function updateProgress(id) {
+            const levels = { 'micro1': 25, 'micro2': 50, 'micro3': 75, 'micro4': 100 };
+            state.progress = levels[id] || state.progress;
+            mainProgress.style.width = state.progress + '%';
+            mainProgress.setAttribute('aria-valuenow', state.progress);
+        }
+
+        /**
+         * Control de despliegue progresivo de los elementos del Acordeón en el Micro 2.
+         */
+        function toggleAccordion(id) {
+            const target = document.getElementById(id);
+            const icon = document.getElementById('icon-' + id);
+            const button = document.getElementById('btn-' + id);
+            const isHidden = target.classList.contains('hidden');
+            
+            // Cerrar todos los demás para optimizar foco y evitar sobrecarga visual
+            ['acc1', 'acc2', 'acc3'].forEach(acc => {
+                document.getElementById(acc).classList.add('hidden');
+                document.getElementById('icon-' + acc).classList.remove('rotate-180');
+                document.getElementById('btn-' + acc).setAttribute('aria-expanded', 'false');
+            });
+
+            if (isHidden) {
+                target.classList.remove('hidden');
+                icon.classList.add('rotate-180');
+                button.setAttribute('aria-expanded', 'true');
+                anunciarAccesible("Mostrando información expandida del tipo de cambio.");
+            }
+        }
+
+        /**
+         * Función Auxiliar de Accesibilidad para Lectores de Pantalla.
+         * Envía anuncios dinámicos a la región ARIA live sin mover el cursor o foco técnico del usuario.
+         */
+        function anunciarAccesible(mensaje) {
+            announcer.textContent = mensaje;
+            // Limpieza del anunciador después de la lectura para futuros cambios
+            setTimeout(() => { announcer.textContent = ''; }, 3000);
+        }
+
+        /**
+         * Procesa el Cuestionario de Evaluación Formativa Automatizada.
+         * Diseñado para no alterar el foco abruptamente, reportando retroalimentación diferida y diagnóstico inmediato.
+         */
+        function procesarEvaluacion() {
+            const form = document.getElementById('formEvaluacion');
+            const data = new FormData(form);
+            
+            const r1 = data.get('p1');
+            const r2 = data.get('p2');
+            const r3 = data.get('p3');
+
+            // Validación de integridad de los campos del formulario formativo
+            if (!r1 || !r2 || !r3) {
+                anunciarAccesible("Por favor complete todas las preguntas del cuestionario formativo.");
+                alert("Por favor complete todas las preguntas antes de validar.");
+                return;
+            }
+
+            // Anuncio dinámico no invasivo para accesibilidad total (WCAG)
+            anunciarAccesible("Procesando respuestas del cuestionario... Respuesta enviada correctamente.");
+
+            let correctas = 0;
+            let fallos = [];
+
+            // Calificación del cuestionario
+            if (r1 === state.respuestasCorrectas.p1) {
+                correctas++;
+            } else {
+                fallos.push("Fórmula de Cambio Generativo: Recuerda que implica el uso de nuevas capacidades y la adquisición preventiva de creencias de bienestar.");
+            }
+
+            if (r2 === state.respuestasCorrectas.p2) {
+                correctas++;
+            } else {
+                fallos.push("Fórmula de Cambio Remediativo: Se orienta a la solución paliativa e inmediata, es decir, apagar incendios en el momento sin robustecer el futuro.");
+            }
+
+            if (r3 === state.respuestasCorrectas.p3) {
+                correctas++;
+            } else {
+                fallos.push("Concepto de Antifragilidad: Mientras que la resiliencia resiste los cambios de choque, la antifragilidad hace que el equipo de trabajo se fortalezca y mejore de forma adaptativa.");
+            }
+
+            // Actualización del sistema acumulativo de gamificación
+            const puntosObtenidos = correctas * 20;
+            state.score += puntosObtenidos;
+            scoreDisplay.textContent = `Puntos: ${state.score}`;
+
+            // Renderizado interactivo de la Retroalimentación Diferida
+            const retroContainer = document.getElementById('sectionRetroalimentacion');
+            const txtResumen = document.getElementById('txtResumenDiagnostico');
+            const listaRecomendaciones = document.getElementById('listaRecomendaciones');
+
+            txtResumen.textContent = `Has respondido correctamente ${correctas} de 3 preguntas en la evaluación automatizada. Puntos obtenidos en este bloque: ${puntosObtenidos} puntos.`;
+            listaRecomendaciones.innerHTML = "";
+
+            if (fallos.length === 0) {
+                const itemOk = document.createElement('div');
+                itemOk.className = "p-3 bg-emerald-100 border border-emerald-300 rounded text-emerald-800 font-semibold";
+                itemOk.textContent = "¡Excelente desempeño! Demuestras una asimilación conceptual sobresaliente sobre las dimensiones técnicas de los tipos de cambio y la resiliencia laboral.";
+                listaRecomendaciones.appendChild(itemOk);
+            } else {
+                fallos.forEach(failText => {
+                    const itemError = document.createElement('div');
+                    itemError.className = "p-3 bg-amber-50 border-l-4 border-amber-500 rounded text-amber-900";
+                    itemError.textContent = `Punto a reforzar: ${failText}`;
+                    listaRecomendaciones.appendChild(itemError);
+                });
+            }
+
+            // Mostrar el bloque con transiciones visuales agradables y accesibles
+            retroContainer.classList.remove('hidden');
+            
+            // Anuncio auditivo diferido detallado
+            setTimeout(() => {
+                anunciarAccesible(`Cuestionario calificado. Resultado: ${correctas} correctas. Retroalimentación diferida disponible en la pantalla.`);
+            }, 1000);
+        }
+
+        /**
+         * Cierre técnico formal de la Guía de Aprendizaje Interactiva.
+         */
+        function completarSesionFinal() {
+            document.getElementById('badgeModal').classList.remove('hidden');
+            anunciarAccesible("Sesión finalizada con éxito. Felicitaciones, has ganado tu insignia digital de competencia.");
+        }
+
+        function closeModal() {
+            document.getElementById('badgeModal').classList.add('hidden');
+            alert("Has concluido satisfactoriamente la guía de aprendizaje de Habilidades para Enfrentar Retos en el Nuevo Entorno Laboral.");
+        }
+
+        // Ejecutar configuraciones iniciales del sistema interactivo en la carga del DOM
+        window.onload = () => {
+            updateProgress('micro1');
+        };
+    </script>
+</body>
+</html>
